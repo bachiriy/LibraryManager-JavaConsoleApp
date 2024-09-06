@@ -24,7 +24,7 @@ public class Magazine extends Document {
 
     @Override
     public void displayDetails() {
-        System.out.printf("%-10s | %-15s | %-20s | %-20s | %-15s | %-15s | %-15s | Issue No: %-15d%n", 
+        System.out.printf("%-10s | %-15s | %-20s | %-20s | %-25s | %-15s | %-10s | Issue No: %-15d%n", 
                           "Magazine", id, title, author, publicationDate, numberOfPages, borrowed ? "YES" : "NO", numero);
 }
 }

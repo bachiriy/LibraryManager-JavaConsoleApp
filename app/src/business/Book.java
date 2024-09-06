@@ -1,4 +1,5 @@
 package business;
+import util.DateUtils;
 
 import java.time.LocalDate;
 
@@ -24,8 +25,8 @@ public class Book extends Document {
 
     @Override
     public void displayDetails() {
-        System.out.printf("%-10s | %-15s | %-20s | %-20s | %-15s | %-15s | %-15s | ISBN: %-15s%n", 
-                          "Book ", id, title, author, publicationDate, numberOfPages, borrowed ? "YES" : "NO", isbn);
+        System.out.printf("%-10s | %-15s | %-20s | %-20s | %-25s | %-15s | %-10s | ISBN: %-15s%n", 
+                          "Book ", id, title, author, DateUtils.toHumanDate(publicationDate), numberOfPages, borrowed ? "YES" : "NO", isbn);
     }
     
 }

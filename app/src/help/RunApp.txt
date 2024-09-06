@@ -1,3 +1,3 @@
   & 'C:\Program Files\Java\jdk-22\bin\java.exe' '--enable-preview' '-XX:+ShowCodeDetailsInExceptionMessages' '-cp' 'C:\Users\moham\AppData\Roaming\Code\User\workspaceStorage\8fa2ba723ae0dfee18a1dc5e309b25ea\redhat.java\jdt_ws\LibraryManager-JavaConsoleApp_69e95885\bin' 'Main'
 
-  copy the upper line and paste on your terminal to run the application.
+  copy the upper line and paste on your terminal to compile and run the application.

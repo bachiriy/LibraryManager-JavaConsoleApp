@@ -24,7 +24,7 @@ public abstract class Document {
 
     public abstract void displayDetails();
 
-    public void setDoc (String id, String title, String author, LocalDate publicationDate, int numberOfPages){
+    public void setDoc(String id, String title, String author, LocalDate publicationDate, int numberOfPages) {
         this.id = id;
         this.title = title;
         this.author = author;
@@ -32,16 +32,15 @@ public abstract class Document {
         this.numberOfPages = numberOfPages;
     }
 
-    public Object[] getDoc(){
-        return new Object[]{id, title, author, publicationDate, numberOfPages};
-    }
-    public void setDoc(String title, String author, LocalDate publicationDate, int numberOfPages){
-        this.title = title;
-        this.author = author;
-        this.publicationDate = publicationDate;
-        this.numberOfPages = numberOfPages;
-    }
-    public String getId(){
+    public String getId() {
         return this.id;
+    }
+
+    public String getTitle() {
+        return this.title;
+    }
+
+    public LocalDate getPubDate() {
+        return this.publicationDate;
     }
 }

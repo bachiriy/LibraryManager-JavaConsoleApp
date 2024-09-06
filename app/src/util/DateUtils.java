@@ -2,39 +2,25 @@ package util;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.time.temporal.ChronoUnit;
 import java.time.format.DateTimeParseException;
 
-public class DateUtils {
-
-    // Define a standard date format
-    private static final DateTimeFormatter DATE_FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-
-    // Convert a LocalDate to a String
-    public static String formatDate(LocalDate date) {
-        if (date == null) {
-            return null;
-        }
-        return DATE_FORMATTER.format(date);
-    }
-
-    // Convert a String to a LocalDate
-    public static LocalDate parseDate(String dateString) {
+public class DateUtils { 
+	public static boolean isValiDate(String dateStr) {
         try {
-            return LocalDate.parse(dateString, DATE_FORMATTER);
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+            LocalDate inputDate = LocalDate.parse(dateStr, formatter);
+            LocalDate now = LocalDate.now();
+
+            return !inputDate.isAfter(now);
+
         } catch (DateTimeParseException e) {
-            System.out.println("Invalid date format. Please use yyyy-MM-dd.");
-            return null;
+            return false;
         }
     }
-
-    // Calculate the difference between two dates in days
-    public static long daysBetween(LocalDate startDate, LocalDate endDate) {
-        return ChronoUnit.DAYS.between(startDate, endDate);
+    public static String toHumanDate(LocalDate date) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEEE, d MMMM yyyy");
+        String formattedDate = date.format(formatter);
+        return formattedDate;
     }
 
-    // Calculate a return date based on the number of days after a given date
-    public static LocalDate calculateReturnDate(LocalDate borrowDate, int loanPeriodDays) {
-        return borrowDate.plusDays(loanPeriodDays);
-    }
 }
