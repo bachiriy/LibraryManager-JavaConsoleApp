@@ -1,4 +1,4 @@
-# Java Console Application for Library Management
+# LibraryManager | Java Console Application for Library Management
 
 ## Project Overview
 
